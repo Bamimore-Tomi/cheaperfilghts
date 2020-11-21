@@ -1,0 +1,31 @@
+
+
+
+{
+
+    "TOKEN":"Use your token for testing.",
+    "db":{
+
+        "host":"localhost",
+        "port":27017,
+        "db_name":"cheaperflights"
+    },
+    "messages":{
+        "welcome":"Welcome to cheaper filghts, we help you find the cheapest flights to you destination.\nWhich country are you departing from.",
+        "city_d":"*Country* : *{}* \nNow, Choose the city you will like to travel from in your country. Please note, only cities with international airports will be listed",
+        "airport_d": "*Country* : *{}* \n*City:{}* \nPlease, pick any international airport for departure.",
+        "country_a":" * *Departure Information* \n\t* *Country : {}* \n\t* *City : {}* \n\t* *Airport : {}*. \nNow, you need to answer some questions about your arrival information.\nClick on /oneway if your trip is a one way trip .\n\n**Country of Arrival ?** i.e Which country are you going to.",
+        "city_a": "Which City in *{}* are you going to ? \n*Only a City with International Airports will be listed*",
+        "airport_a": "You want to arrive at *{}* in *{}*. Please,choose one of the International Airport for *Arrival*.",
+        "travel_info": "I will now ask a couple of information about your travel companions,arrival and departure dates.",
+        "day":"Please choose a day of the month for  *{}*.",
+        "month":"Please, pick a month of the year you intend to *{}*.",
+        "year":"Please, pick the year you want to travel. (*{}*)",
+        "adults":"Pick the total number of adults travelling. *(12yrs and above)* \nPick 0 if this does not apply to you",
+        "children":"Pick the total number of children travelling. *(2yrs - 11yrs)* \nPick 0 if this does not apply to you",
+        "infants":"Pick the total number of infants travelling.*(2yrs-11yrs)* \nPick 0 if this does not apply to you.",
+        "all_info":" * *Departure Information* \n\t* *Country : {}* \n\t* *City : {}* \n\t* *Airport : {}* \n\t* *Date : {}-{}-{}*. \n* *Arrival Information* \n\t* *Country : {}* \n\t* *City : {}* \n\t* *Airport : {}* \n\t* *Date : {}-{}-{}*.\n* *Passenger Details* \n\t* *Adults:{}* \n\t* *Children:{}* \n\t* *Infants:{}*. \n\n *A search will be carried out with this information*. Grab a cup of coffee,this will take a moment.",
+        "one_way":"You have selected the option for a one way trip.\nPlease select the dates on the keyboard to proceeed"
+    }
+
+}
