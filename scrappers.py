@@ -21,23 +21,23 @@ def cheaperflights(airport_d=None,airport_a=None,date_d=None,date_a=None,adults=
     shortener_object = pyshorteners.Shortener()
     data = []
     for i in all_:
-    airline_go = all_[i].find('div',{'class':'section times'}).find('div',{'class':'bottom'}).text.strip()
-    depart_time_go = all_[i].find('div',{'class':'section times'}).find('span',{'class':'depart-time base-time'}).text.strip().replace('\n','')
-    arrival_time_go = all_[i].find('div',{'class':'section times'}).find('span',{'class':'arrival-time base-time'}).text.strip().replace('\n','')
-    stops_go = all_[i].find('div',{'class':'section stops'}).find('span',{'class':'stops-text'}).text.strip()
-    airline_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).text.strip().replace('\n','')
-    depart_time_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).find('span',{'class':'depart-time base-time'}).text.strip().replace('\n','')
-    arrival_time_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).find('span',{'class':'arrival-time base-time'}).text.strip().replace('\n','')
-    stops_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section stops'}).find('span',{'class':'stops-text'}).text.strip().replace('\n','')
-    link_long= all_[i].find('div',{'class':'multibook-dropdown'}).find('a',{'class':'booking-link'}).attrs['href']
-    link = shortener_object.tinyurl.short(base_url+link_long)
-    price = all_[i].find('span',{'class':'price-text'}).text.strip()
-    price_currency = price[:1]
-    price_value = int(price[1:].replace(',',''))
-    data.append({'AG':airline_go , 'DTG': depart_time_go,'ATG':arrival_time_go,'SG':stops_go,
-                    'AC':airline_come,'DTC':depart_time_come,'ATC':arrival_time_come,'SC':stops_come,
-                    'LL':link_long,'L':link, 'P':price,'PC':price_currency,'PV':price_value})
+        airline_go = all_[i].find('div',{'class':'section times'}).find('div',{'class':'bottom'}).text.strip()
+        depart_time_go = all_[i].find('div',{'class':'section times'}).find('span',{'class':'depart-time base-time'}).text.strip().replace('\n','')
+        arrival_time_go = all_[i].find('div',{'class':'section times'}).find('span',{'class':'arrival-time base-time'}).text.strip().replace('\n','')
+        stops_go = all_[i].find('div',{'class':'section stops'}).find('span',{'class':'stops-text'}).text.strip()
+        airline_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).text.strip().replace('\n','')
+        depart_time_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).find('span',{'class':'depart-time base-time'}).text.strip().replace('\n','')
+        arrival_time_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section times'}).find('span',{'class':'arrival-time base-time'}).text.strip().replace('\n','')
+        stops_come = all_[i].find('li',{'class':'flight'}).find('div',{'class':'section stops'}).find('span',{'class':'stops-text'}).text.strip().replace('\n','')
+        link_long= all_[i].find('div',{'class':'multibook-dropdown'}).find('a',{'class':'booking-link'}).attrs['href']
+        link = shortener_object.tinyurl.short(base_url+link_long)
+        price = all_[i].find('span',{'class':'price-text'}).text.strip()
+        price_currency = price[:1]
+        price_value = int(price[1:].replace(',',''))
+        data.append({'AG':airline_go , 'DTG': depart_time_go,'ATG':arrival_time_go,'SG':stops_go,
+                        'AC':airline_come,'DTC':depart_time_come,'ATC':arrival_time_come,'SC':stops_come,
+                        'LL':link_long,'L':link, 'P':price,'PC':price_currency,'PV':price_value})
     ##Returns a where AG=Departure Airline, DTG=depature time going, ATG=Arrival time going SG=Number of stops going, AC=Airline Coming
     ##DTC=departure time coming ATC=Arrival time coming,SC=Number of stops coming,LL=Booking link, L=Shortened booking link
     ##PC is the currency of the price , PV=integer value of the currency
-print(data)
+print(cheaperflights())
